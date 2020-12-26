@@ -63,7 +63,6 @@ export class Form extends Component {
                         <View>
                             <TextInput
                                 label="Name"
-                                mode="flat"
                                 value={this.state.name}
                                 theme={{ colors: { primary: "#333" } }}
                                 style={{ margin: 10 }}

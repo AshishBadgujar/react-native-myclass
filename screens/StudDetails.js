@@ -7,7 +7,7 @@ import { Button, Modal, Portal, Provider, TextInput } from 'react-native-paper';
 const StudDetails = ({ navigation, route }) => {
     const { student } = route.params
     const [visible, setVisible] = useState(false)
-    const [fees, setFees] = useState('')
+    const [fees, setFees] = useState(null)
     const [studList, setStudList] = useState([]);
     useEffect(() => {
         getStudents();
@@ -40,7 +40,7 @@ const StudDetails = ({ navigation, route }) => {
     }
     const updateFees = () => {
         var date = new Date()
-        if (fees != "0" || fees != null) {
+        if (fees != '0' && fees != null) {
             studList.forEach((stud) => {
                 if (stud.name == student.name) {
                     student.payedFeesArray.push({ amount: fees, date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` })
